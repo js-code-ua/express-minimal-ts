@@ -21,10 +21,11 @@
   "homepage": "https://github.com/js-code-ua/express-minimal-ts#readme",
   "dependencies": {
     "dotenv": "^10.0.0",
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "inversify": "^6.0.1",
+    "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
-    "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.13",
     "@types/node": "^16.11.19",
     "@typescript-eslint/eslint-plugin": "^5.9.1",
