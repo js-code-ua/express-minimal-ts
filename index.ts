@@ -1,9 +1,9 @@
 import dotenv from 'dotenv'
-import app from './src/app'
-import { init } from './src/common/components/db'
-
 // initialize configuration
 dotenv.config()
+
+import app from './src/app'
+import { init, logger } from './src/common/components'
 
 // port is now available to the Node.js runtime
 // as if it were an environment variable
@@ -14,8 +14,8 @@ async function startUp() {
   await init(dbUri)
 
   app.listen(port, () => {
-    console.log(`[Express]: Application is listening on port ${port}!`)
+    logger.info(`[Express]: Application is listening on port ${port}!`)
   })
 }
 
-startUp().catch(console.error)
+startUp().catch(logger.error)
