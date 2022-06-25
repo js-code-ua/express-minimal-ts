@@ -1,14 +1,13 @@
 import { User } from './types/interfaces'
+import { userRepository } from './user.repository'
 
 export default class UserService {
-  private readonly users: User[] = []
-
   create(user: User) {
-    this.users.push(user)
+    return userRepository.create(user)
   }
 
-  getAll() {
-    return this.users
+  async getAll() {
+    return (await userRepository.findAll()).map((x) => x.toJSON)
   }
 }
 

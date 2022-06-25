@@ -1,7 +1,8 @@
 import { UserGenderEnum, UserRoleEnum } from '../enums'
 
 export interface User {
-  id: string
+  email: string
+  password: string
   firstName: string
   lastName: string
   gender: UserGenderEnum
